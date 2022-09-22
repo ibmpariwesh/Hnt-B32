@@ -1,0 +1,15 @@
+<p>signup form</p>
+<form name="signupForm" class="signupForm">
+    <div class="signupContainer">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter UserName" [(ngModel)] ="user.username" name="userName" class="name"/>
+        
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" [(ngModel)] = "user.password" name="password" class="password"/>
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter email" [(ngModel)] = "user.email" name="email" class="email"/>
+        <button (click)="signup()">Sign Up</button>
+    </div>
+   
+</form>
+

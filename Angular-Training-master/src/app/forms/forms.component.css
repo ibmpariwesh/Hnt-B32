@@ -1,0 +1,10 @@
+.loginForm{
+    margin: auto;
+    width: 50%;
+    border: 1px solid gray;
+    padding: 10px;
+}
+.loginContainer .uname{
+    display: block;
+    margin: 10px 0;
+}

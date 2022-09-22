@@ -1,0 +1,13 @@
+<form name="loginForm" class="loginForm">
+    <div class="loginContainer">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter UserName" [(ngModel)] ="user.userName" name="userName" class="name"/>
+        
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" [(ngModel)] = "user.password" name="password" class="password"/>
+        
+        <button (click)="save()">Submit</button>
+    </div>
+   
+</form>
+
