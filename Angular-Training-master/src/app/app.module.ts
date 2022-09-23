@@ -8,19 +8,25 @@ import { FormsComponent } from './forms/forms.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component'
+import { Route, RouterModule } from '@angular/router';
+import { SearchBookComponent } from './search-book/search-book.component';
 
+const routes:Route []= [
+  {path:'search', component:SearchBookComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FormsComponent,
-    SignupComponent
+    SignupComponent,
+    SearchBookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
