@@ -24,9 +24,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 @SpringBootTest
 public class ControllerTest {  
-	  
-	
-	
 	@Autowired
 	private BookService bookservtest;
 	@Autowired

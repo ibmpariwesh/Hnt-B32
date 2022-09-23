@@ -12,7 +12,10 @@ import { Route, RouterModule } from '@angular/router';
 import { SearchBookComponent } from './search-book/search-book.component';
 
 const routes:Route []= [
-  {path:'search', component:SearchBookComponent}
+  {path:'search', component:SearchBookComponent},
+  {path:'', component:FormsComponent},
+  {path:'signup', component:SignupComponent}
+
 ];
 @NgModule({
   declarations: [

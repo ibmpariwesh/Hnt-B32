@@ -36,7 +36,6 @@ public class BooksController {
 	private IBookrepo repo;
 	
 	@PreAuthorize("hasRole('ROLE_AUTHOR')")
-
 	@PostMapping("/createbook")
 	public String  newbook(@RequestBody Book book)
 	{
