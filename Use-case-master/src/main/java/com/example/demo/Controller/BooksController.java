@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,25 +28,20 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 @RequestMapping("/api/auth") 
+@CrossOrigin
 public class BooksController {  
 	 
 	@Autowired
 	private BookService bookservice;
-	
-	@Autowired
-	private IBookrepo repo;
-	
 	@PreAuthorize("hasRole('ROLE_AUTHOR')")
 	@PostMapping("/createbook")
 	public String  newbook(@RequestBody Book book)
 	{
 		bookservice.savebook(book);
 		return "Book is created succsefully";
-		
 	}
 	
 	@PreAuthorize("hasRole('ROLE_AUTHOR')")
-
 	@PutMapping("/updatebook/{bookid}")
 	public Book updatebook(@RequestBody Book book, @PathVariable("bookid") Long bookid)
 	{

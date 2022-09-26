@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component'
 import { Route, RouterModule } from '@angular/router';
 import { SearchBookComponent } from './search-book/search-book.component';
+import { BookformComponent } from './bookform/bookform.component';
 
 const routes: Route[] = [
   { path: 'search', component: SearchBookComponent },
-  { path: '', component: SearchBookComponent },
+  { path: '', component: BookformComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: FormsComponent }
 
@@ -24,7 +25,8 @@ const routes: Route[] = [
     HeaderComponent,
     FormsComponent,
     SignupComponent,
-    SearchBookComponent
+    SearchBookComponent,
+    BookformComponent
   ],
   imports: [
     BrowserModule,
