@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { UserService } from '../user.service';
 })
 export class FormsComponent implements OnInit {
   user = {
-    userName : "",
-    password : ""
+    username : "author1",
+    password : "testing123"
   }
 
   save(){
@@ -17,13 +18,15 @@ export class FormsComponent implements OnInit {
     observable.subscribe(
       (response:any) => {
         console.log(response);
+        sessionStorage.setItem('credentials', JSON.stringify(response));
+        this.router.navigate(['']);
       },function(error) {
         console.log("Something went worng" , error);
         
       }
     )
   }
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
